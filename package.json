@@ -1,5 +1,5 @@
 {
-  "name": "socks-proxy-agent",
+  "name": "socks-proxy-agent-with-timeout",
   "version": "4.0.1",
   "description": "A SOCKS proxy `http.Agent` implementation for HTTP and HTTPS",
   "main": "./index.js",
