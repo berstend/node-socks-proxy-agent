@@ -1,3 +1,31 @@
+# socks-proxy-agent-with-timeout
+
+* Adds `timeout` passing to socks client, see: 
+  https://github.com/TooTallNate/node-socks-proxy-agent/issues/26
+
+## Usage
+
+```bash
+yarn add berstend/node-socks-proxy-agent-with-timeout
+```
+
+```typescript
+import * as ProxyAgent from 'proxy-agent'
+import * as SocksProxyAgentWithTimeout from 'socks-proxy-agent-with-timeout'
+
+const agent = new ProxyAgent({
+  protocol: 'socks5:',
+  hostname: '163.172.173.187',
+  port: '3000',
+  timeout: 3 * 1000, // socks timeout
+  proxies: {
+    socks5: SocksProxyAgentWithTimeout
+  }
+})
+agent.timeout = 1 * 1000 // general proxy agent timeout
+```
+
+
 socks-proxy-agent
 ================
 ### A SOCKS proxy `http.Agent` implementation for HTTP and HTTPS
